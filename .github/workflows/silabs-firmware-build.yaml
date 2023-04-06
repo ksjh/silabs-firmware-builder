@@ -46,7 +46,7 @@ jobs:
     name: Build firmware
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/ksjh/silabs-firmware-builder:${{ inputs.sdk_version }}
+      image: ghcr.io/${{ github.repository }}:${{ inputs.sdk_version }}
       options: --user root
     defaults:
       run:
@@ -103,7 +103,7 @@ jobs:
       - name: Generate gbl Firmware
         run: |
           cd ${{ inputs.firmware_name }}
-          commander gbl create build/release/${{ inputs.project_name }}.gbl \
+          commander gbl create build/release/${{ inputs.firmware_name }}.gbl \
                     --app build/release/${{ inputs.project_name }}.out \
                     --device ${{ inputs.device }} --metadata version.json
 
@@ -111,4 +111,4 @@ jobs:
         if: success() || failure()
         with:
           name: ${{ inputs.firmware_name }}
-          path: ${{ inputs.firmware_name }}
+          path: ${{ inputs.firmware_name }}/build/release/${{ inputs.firmware_name }}.gbl
