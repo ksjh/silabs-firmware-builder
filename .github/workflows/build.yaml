@@ -130,11 +130,6 @@ jobs:
             components: cpc_security_secondary_none
             patchpath: "RCPMultiPAN/ZBDongleE-460"
             metadata_extra: "{ \"baudrate\": 460800 }"
-          - target: zbdonglee-none
-            device: EFR32MG21A020F768IM32
-            components: cpc_security_secondary_none
-            patchpath: "RCPMultiPAN/ZBDongleE-none"
-            metadata_extra: "{ \"baudrate\": 115200 }"
           - target: zb-gw04-1v1
             device: EFR32MG21A020F768IM32
             components: cpc_security_secondary_none
@@ -198,11 +193,6 @@ jobs:
             components: bootloader_interface
             patchpath: "OpenThreadRCP/ZBDongleE-460"
             metadata_extra: "{ \"ot_rcp_version\": \"SL-OPENTHREAD/2.2.2.0_GitHub-91fa1f455\", \"baudrate\": 460800 }"
-          - target: zbdonglee-none
-            device: EFR32MG21A020F768IM32
-            components: bootloader_interface
-            patchpath: "OpenThreadRCP/ZBDongleE-none"
-            metadata_extra: "{ \"ot_rcp_version\": \"SL-OPENTHREAD/2.2.2.0_GitHub-91fa1f455\", \"baudrate\": 115200 }"
           - target: zb-gw04-1v1
             device: EFR32MG21A020F768IM32
             components: bootloader_interface

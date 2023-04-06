@@ -1,0 +1,11 @@
+--- a/config/sl_uartdrv_usart_vcom_config.h	2023-03-16 02:03:24.110344793 +0100
++++ b/config/sl_uartdrv_usart_vcom_config.h	2023-03-16 02:12:02.131728433 +0100
+@@ -47,7 +47,7 @@
+ // <uartdrvFlowControlHw=> nRTS/nCTS hardware handshake
+ // <uartdrvFlowControlHwUart=> UART peripheral controls nRTS/nCTS
+ // <i> Default: uartdrvFlowControlHw
+-#define SL_UARTDRV_USART_VCOM_FLOW_CONTROL_TYPE uartdrvFlowControlHw
++#define SL_UARTDRV_USART_VCOM_FLOW_CONTROL_TYPE uartdrvFlowControlNone
+ 
+ // <o SL_UARTDRV_USART_VCOM_OVERSAMPLING> Oversampling selection
+ // <usartOVS16=> 16x oversampling

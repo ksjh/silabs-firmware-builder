@@ -25,14 +25,14 @@
 -// #define SL_IOSTREAM_USART_VCOM_CTS_PORT        gpioPortA
 -// #define SL_IOSTREAM_USART_VCOM_CTS_PIN         12
 +// USART0 CTS on PD03
-+#define SL_IOSTREAM_USART_VCOM_CTS_PORT          gpioPortD
-+#define SL_IOSTREAM_USART_VCOM_CTS_PIN           3
++//#define SL_IOSTREAM_USART_VCOM_CTS_PORT          gpioPortD
++//#define SL_IOSTREAM_USART_VCOM_CTS_PIN           3
  
 -// #define SL_IOSTREAM_USART_VCOM_RTS_PORT        gpioPortC
 -// #define SL_IOSTREAM_USART_VCOM_RTS_PIN         8
 +// USART0 RTS on PD04
-+#define SL_IOSTREAM_USART_VCOM_RTS_PORT          gpioPortD
-+#define SL_IOSTREAM_USART_VCOM_RTS_PIN           4
++//#define SL_IOSTREAM_USART_VCOM_RTS_PORT          gpioPortD
++//#define SL_IOSTREAM_USART_VCOM_RTS_PIN           4
  // [USART_SL_IOSTREAM_USART_VCOM]$
  // <<< sl:end pin_tool >>>
  

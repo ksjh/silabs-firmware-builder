@@ -1,0 +1,11 @@
+--- a/config/sl_cpc_drv_secondary_uart_usart_vcom_config.h	2023-03-12 13:41:10.369470657 +0100
++++ b/config/sl_cpc_drv_secondary_uart_usart_vcom_config.h	2023-03-12 13:41:56.522665941 +0100
+@@ -51,7 +51,7 @@
+ // <usartHwFlowControlNone=> None
+ // <usartHwFlowControlCtsAndRts=> CTS/RTS
+ // <i> Default: usartHwFlowControlCtsAndRts
+-#define SL_CPC_DRV_UART_VCOM_FLOW_CONTROL_TYPE usartHwFlowControlCtsAndRts
++#define SL_CPC_DRV_UART_VCOM_FLOW_CONTROL_TYPE usartHwFlowControlNone
+ // </h>
+ 
+ // <<< end of configuration section >>>

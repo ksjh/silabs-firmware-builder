@@ -13,14 +13,14 @@ index 66288db..56c21a9 100644
 -// USART TX
 -#define SL_CPC_DRV_UART_VCOM_TX_PORT                    gpioPortD
 -#define SL_CPC_DRV_UART_VCOM_TX_PIN                     13
-+// USART0 TX on PA06
++// USART0 TX on PB01
 +#define SL_CPC_DRV_UART_VCOM_TX_PORT                    gpioPortB
 +#define SL_CPC_DRV_UART_VCOM_TX_PIN                     1
  
 -// USART RX
 -#define SL_CPC_DRV_UART_VCOM_RX_PORT                    gpioPortD
 -#define SL_CPC_DRV_UART_VCOM_RX_PIN                     14
-+// USART0 RX on PA05
++// USART0 RX on PB00
 +#define SL_CPC_DRV_UART_VCOM_RX_PORT                    gpioPortB
 +#define SL_CPC_DRV_UART_VCOM_RX_PIN                     0
  
@@ -28,15 +28,15 @@ index 66288db..56c21a9 100644
 -#define SL_CPC_DRV_UART_VCOM_CTS_PORT                   gpioPortD
 -#define SL_CPC_DRV_UART_VCOM_CTS_PIN                    13
 +// USART0 CTS on PB01
-+#define SL_CPC_DRV_UART_VCOM_CTS_PORT                   gpioPortD
-+#define SL_CPC_DRV_UART_VCOM_CTS_PIN                    3
++//#define SL_CPC_DRV_UART_VCOM_CTS_PORT                   gpioPortD
++//#define SL_CPC_DRV_UART_VCOM_CTS_PIN                    3
  
 -// USART RTS
 -#define SL_CPC_DRV_UART_VCOM_RTS_PORT                   gpioPortD
 -#define SL_CPC_DRV_UART_VCOM_RTS_PIN                    14
 +// USART0 RTS on PB00
-+#define SL_CPC_DRV_UART_VCOM_RTS_PORT                   gpioPortD
-+#define SL_CPC_DRV_UART_VCOM_RTS_PIN                    4
++//#define SL_CPC_DRV_UART_VCOM_RTS_PORT                   gpioPortD
++//#define SL_CPC_DRV_UART_VCOM_RTS_PIN                    4
  
  // [USART_SL_CPC_DRV_UART_VCOM]$
  // <<< sl:end pin_tool >>>
