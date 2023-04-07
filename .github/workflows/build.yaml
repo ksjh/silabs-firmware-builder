@@ -35,9 +35,9 @@ jobs:
         with:
           context: .
           file: Dockerfile
-          tags: ghcr.io/ksjh/silabs-firmware-builder:${{ env.sdk_version }}
-          cache-from: ghcr.io/ksjh/silabs-firmware-builder:cache-${{ env.sdk_version }}
-          cache-to: ghcr.io/ksjh/silabs-firmware-builder:cache-${{ env.sdk_version }}
+          tags: ghcr.io/${{ github.repository }}:${{ env.sdk_version }}
+          cache-from: ghcr.io/${{ github.repository }}:cache-${{ env.sdk_version }}
+          cache-to: ghcr.io/${{ github.repository }}:cache-${{ env.sdk_version }}
           push: true
           build-args:
             "GECKO_SDK_VERSION=v${{ env.sdk_version }}"
@@ -163,6 +163,7 @@ jobs:
       device: ${{ matrix.device }}
       components: ${{ matrix.components }}
       patchpath: ${{ matrix.patchpath }}
+      sdkpatchpath: "RCPMultiPAN/GeckoSDK"
       sdk_version: 4.2.2
       metadata_fw_type: "rcp-uart-802154"
       metadata_extra: ${{ matrix.metadata_extra }}
@@ -236,4 +237,26 @@ jobs:
       sdk_version: 4.2.2
       metadata_fw_type: "ot-rcp"
       metadata_extra: ${{ matrix.metadata_extra }}
+
+  collect_artifacts:
+    name: download and publish all artifacts
+    runs-on: ubuntu-latest
+    needs: [ezsp-firmware-build, rcp-multi-pan-firmware-build, ot-rcp-firmware-build]
+    steps:
+      - uses: actions/checkout@v3.3.0
+      - uses: actions/download-artifact@v3
+        with:
+          path: firmware_builds
+      - name: Reorganise artifact structure
+        run: |
+          mv */*.gbl .
+          rm -rf */
+          ls
+        working-directory: firmware_builds
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update firmware builds
+          file_pattern: firmware_builds/*.gbl
+
+
 

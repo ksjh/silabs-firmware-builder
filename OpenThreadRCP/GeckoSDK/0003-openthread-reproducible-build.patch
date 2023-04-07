@@ -1,0 +1,26 @@
+From a59b653261323d0bd1a1320ec529d7ea1908b077 Mon Sep 17 00:00:00 2001
+From: Tim Lunn <tim@feathertop.org>
+Date: Fri, 7 Apr 2023 21:27:54 +1000
+Subject: [PATCH] openthread reproducible build
+
+---
+ util/third_party/openthread/src/core/api/instance_api.cpp | 3 ---
+ 1 file changed, 3 deletions(-)
+
+diff --git a/util/third_party/openthread/src/core/api/instance_api.cpp b/util/third_party/openthread/src/core/api/instance_api.cpp
+index 9cc35c96c..c5abf0774 100644
+--- a/util/third_party/openthread/src/core/api/instance_api.cpp
++++ b/util/third_party/openthread/src/core/api/instance_api.cpp
+@@ -49,9 +49,6 @@
+ #include <cutils/properties.h>
+ #endif
+ #else // __ANDROID__
+-#if defined(__DATE__)
+-#define OPENTHREAD_BUILD_DATETIME __DATE__ " " __TIME__
+-#endif
+ #endif // __ANDROID__
+ #endif // !defined(OPENTHREAD_BUILD_DATETIME)
+ 
+-- 
+2.37.2
+
