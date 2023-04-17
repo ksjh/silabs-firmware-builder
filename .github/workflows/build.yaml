@@ -52,35 +52,35 @@ jobs:
             device: MGM210PA32JIA
             components: simple_led:board_activity
             patchpath: "EmberZNet/Yellow"
-            metadata_extra: "{ \"ezsp_version\": \"7.2.2.0\", \"baudrate\": 115200 }"
+            baudrate: 115200
           - target: skyconnect
             device: EFR32MG21A020F512IM32
             patchpath: "EmberZNet/SkyConnect"
-            metadata_extra: "{ \"ezsp_version\": \"7.2.2.0\", \"baudrate\": 115200 }"
+            baudrate: 115200
           - target: zbdonglee
             device: EFR32MG21A020F768IM32
             patchpath: "EmberZNet/ZBDongleE"
-            metadata_extra: "{ \"ezsp_version\": \"7.2.2.0\", \"baudrate\": 115200 }"
+            baudrate: 115200
           - target: zbdonglee-230
             device: EFR32MG21A020F768IM32
-            patchpath: "EmberZNet/ZBDongleE-230"
-            metadata_extra: "{ \"ezsp_version\": \"7.2.2.0\", \"baudrate\": 230400 }"
+            patchpath: "EmberZNet/ZBDongleE"
+            baudrate: 230400
           - target: zbdonglee-none
             device: EFR32MG21A020F768IM32
             patchpath: "EmberZNet/ZBDongleE-none"
-            metadata_extra: "{ \"ezsp_version\": \"7.2.2.0\", \"baudrate\": 115200 }"
+            baudrate: 115200
           - target: zb-gw04-1v1
             device: EFR32MG21A020F768IM32
             patchpath: "EmberZNet/ZB-GW04-1v1"
-            metadata_extra: "{ \"ezsp_version\": \"7.2.2.0\", \"baudrate\": 115200 }"
+            baudrate: 115200
           - target: zb-gw04-1v2
             device: EFR32MG21A020F768IM32
             patchpath: "EmberZNet/ZB-GW04-1v2"
-            metadata_extra: "{ \"ezsp_version\": \"7.2.2.0\", \"baudrate\": 115200 }"
+            baudrate: 115200
           - target: zb-gw04-1v2-230
             device: EFR32MG21A020F768IM32
-            patchpath: "EmberZNet/ZB-GW04-1v2-230"
-            metadata_extra: "{ \"ezsp_version\": \"7.2.2.0\", \"baudrate\": 230400 }"
+            patchpath: "EmberZNet/ZB-GW04-1v2"
+            baudrate: 230400
     uses: ./.github/workflows/silabs-firmware-build.yaml
     with:
       firmware_name: ncp-uart-hw-${{ matrix.target }}
@@ -97,7 +97,7 @@ jobs:
       extra_c_defs: "'-DEMBER_ADDRESS_TABLE_SIZE=16' '-DEMBER_MULTICAST_TABLE_SIZE=16'"
       sdk_version: 4.2.2
       metadata_fw_type: "ncp-uart-hw"
-      metadata_extra: ${{ matrix.metadata_extra }}
+      metadata_extra: "{ \"ezsp_version\": \"7.2.2.0\" }"
 
   rcp-multi-pan-firmware-build:
     name: RCP Multi-PAN
@@ -109,52 +109,52 @@ jobs:
             device: MGM210PA32JIA
             components: simple_led:board_activity,cpc_security_secondary_none
             patchpath: "RCPMultiPAN/Yellow"
-            metadata_extra: "{ \"baudrate\": 115200 }"
+            baudrate: 115200
           - target: skyconnect
             device: EFR32MG21A020F512IM32
             components: cpc_security_secondary_none
             patchpath: "RCPMultiPAN/SkyConnect"
-            metadata_extra: "{ \"baudrate\": 115200 }"
+            baudrate: 115200
           - target: zbdonglee
             device: EFR32MG21A020F768IM32
             components: cpc_security_secondary_none
             patchpath: "RCPMultiPAN/ZBDongleE"
-            metadata_extra: "{ \"baudrate\": 115200 }"
+            baudrate: 115200
           - target: zbdonglee-230
             device: EFR32MG21A020F768IM32
             components: cpc_security_secondary_none
-            patchpath: "RCPMultiPAN/ZBDongleE-230"
-            metadata_extra: "{ \"baudrate\": 230400 }"
+            patchpath: "RCPMultiPAN/ZBDongleE"
+            baudrate: 230400
           - target: zbdonglee-460
             device: EFR32MG21A020F768IM32
             components: cpc_security_secondary_none
-            patchpath: "RCPMultiPAN/ZBDongleE-460"
-            metadata_extra: "{ \"baudrate\": 460800 }"
+            patchpath: "RCPMultiPAN/ZBDongleE"
+            baudrate: 460800
           - target: zbdonglee-none
             device: EFR32MG21A020F768IM32
             components: cpc_security_secondary_none
             patchpath: "RCPMultiPAN/ZBDongleE-none"
-            metadata_extra: "{ \"baudrate\": 115200 }"
+            baudrate: 115200
           - target: zb-gw04-1v1
             device: EFR32MG21A020F768IM32
             components: cpc_security_secondary_none
             patchpath: "RCPMultiPAN/ZB-GW04-1v1"
-            metadata_extra: "{ \"baudrate\": 115200 }"
+            baudrate: 115200
           - target: zb-gw04-1v2
             device: EFR32MG21A020F768IM32
             components: cpc_security_secondary_none
             patchpath: "RCPMultiPAN/ZB-GW04-1v2"
-            metadata_extra: "{ \"baudrate\": 115200 }"
+            baudrate: 115200
           - target: zb-gw04-1v2-230
             device: EFR32MG21A020F768IM32
             components: cpc_security_secondary_none
-            patchpath: "RCPMultiPAN/ZB-GW04-1v2-230"
-            metadata_extra: "{ \"baudrate\": 230400 }"
+            patchpath: "RCPMultiPAN/ZB-GW04-1v2"
+            baudrate: 230400
           - target: zb-gw04-1v2-460
             device: EFR32MG21A020F768IM32
             components: cpc_security_secondary_none
-            patchpath: "RCPMultiPAN/ZB-GW04-1v2-460"
-            metadata_extra: "{ \"baudrate\": 460800 }"
+            patchpath: "RCPMultiPAN/ZB-GW04-1v2"
+            baudrate: 460800
     uses: ./.github/workflows/silabs-firmware-build.yaml
     with:
       firmware_name: rcp-uart-802154-${{ matrix.target }}
@@ -165,7 +165,6 @@ jobs:
       patchpath: ${{ matrix.patchpath }}
       sdk_version: 4.2.2
       metadata_fw_type: "rcp-uart-802154"
-      metadata_extra: ${{ matrix.metadata_extra }}
 
   ot-rcp-firmware-build:
     name: OpenThread RCP
@@ -177,52 +176,52 @@ jobs:
             device: MGM210PA32JIA
             components: simple_led:board_activity,bootloader_interface
             patchpath: "OpenThreadRCP/Yellow"
-            metadata_extra: "{ \"ot_rcp_version\": \"SL-OPENTHREAD/2.2.2.0_GitHub-91fa1f455\", \"baudrate\": 115200 }"
+            baudrate: 115200
           - target: skyconnect
             device: EFR32MG21A020F512IM32
             components: bootloader_interface
             patchpath: "OpenThreadRCP/SkyConnect"
-            metadata_extra: "{ \"ot_rcp_version\": \"SL-OPENTHREAD/2.2.2.0_GitHub-91fa1f455\", \"baudrate\": 115200 }"
+            baudrate: 115200
           - target: zbdonglee
             device: EFR32MG21A020F768IM32
             components: bootloader_interface
             patchpath: "OpenThreadRCP/ZBDongleE"
-            metadata_extra: "{ \"ot_rcp_version\": \"SL-OPENTHREAD/2.2.2.0_GitHub-91fa1f455\", \"baudrate\": 115200 }"
+            baudrate: 115200
           - target: zbdonglee-230
             device: EFR32MG21A020F768IM32
             components: bootloader_interface
-            patchpath: "OpenThreadRCP/ZBDongleE-230"
-            metadata_extra: "{ \"ot_rcp_version\": \"SL-OPENTHREAD/2.2.2.0_GitHub-91fa1f455\", \"baudrate\": 230400 }"
+            patchpath: "OpenThreadRCP/ZBDongleE"
+            baudrate: 230400
           - target: zbdonglee-460
             device: EFR32MG21A020F768IM32
             components: bootloader_interface
-            patchpath: "OpenThreadRCP/ZBDongleE-460"
-            metadata_extra: "{ \"ot_rcp_version\": \"SL-OPENTHREAD/2.2.2.0_GitHub-91fa1f455\", \"baudrate\": 460800 }"
+            patchpath: "OpenThreadRCP/ZBDongleE"
+            baudrate: 460800
           - target: zbdonglee-none
             device: EFR32MG21A020F768IM32
             components: bootloader_interface
             patchpath: "OpenThreadRCP/ZBDongleE-none"
-            metadata_extra: "{ \"ot_rcp_version\": \"SL-OPENTHREAD/2.2.2.0_GitHub-91fa1f455\", \"baudrate\": 115200 }"
+            baudrate: 115200
           - target: zb-gw04-1v1
             device: EFR32MG21A020F768IM32
             components: bootloader_interface
             patchpath: "OpenThreadRCP/ZB-GW04-1v1"
-            metadata_extra: "{ \"ot_rcp_version\": \"SL-OPENTHREAD/2.2.2.0_GitHub-91fa1f455\", \"baudrate\": 115200 }"
+            baudrate: 115200
           - target: zb-gw04-1v2
             device: EFR32MG21A020F768IM32
             components: bootloader_interface
             patchpath: "OpenThreadRCP/ZB-GW04-1v2"
-            metadata_extra: "{ \"ot_rcp_version\": \"SL-OPENTHREAD/2.2.2.0_GitHub-91fa1f455\", \"baudrate\": 115200 }"
+            baudrate: 115200
           - target: zb-gw04-1v2-230
             device: EFR32MG21A020F768IM32
             components: bootloader_interface
-            patchpath: "OpenThreadRCP/ZB-GW04-1v2-230"
-            metadata_extra: "{ \"ot_rcp_version\": \"SL-OPENTHREAD/2.2.2.0_GitHub-91fa1f455\", \"baudrate\": 230400 }"
+            patchpath: "OpenThreadRCP/ZB-GW04-1v2"
+            baudrate: 230400
           - target: zb-gw04-1v2-460
             device: EFR32MG21A020F768IM32
             components: bootloader_interface
-            patchpath: "OpenThreadRCP/ZB-GW04-1v2-460"
-            metadata_extra: "{ \"ot_rcp_version\": \"SL-OPENTHREAD/2.2.2.0_GitHub-91fa1f455\", \"baudrate\": 460800 }"
+            patchpath: "OpenThreadRCP/ZB-GW04-1v2"
+            baudrate: 460800
     uses: ./.github/workflows/silabs-firmware-build.yaml
     with:
       firmware_name: ot-rcp-${{ matrix.target }}
@@ -235,5 +234,4 @@ jobs:
       extra_c_defs: "'-DOPENTHREAD_CONFIG_NCP_REBOOT_BOOTLOADER_ENABLE=1'"
       sdk_version: 4.2.2
       metadata_fw_type: "ot-rcp"
-      metadata_extra: ${{ matrix.metadata_extra }}
-
+      metadata_extra: "{ \"ot_rcp_version\": \"SL-OPENTHREAD/2.2.2.0_GitHub-91fa1f455\" }"
